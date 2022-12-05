@@ -1,5 +1,4 @@
 import { React } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 // Importando los componentes del presupuesto
 import Budget from './components/Budget';
 import Remaining from './components/Remaining';
