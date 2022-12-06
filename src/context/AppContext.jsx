@@ -1,4 +1,13 @@
 import { createContext, useReducer, React } from 'react';
+import PropTypes from 'prop-types';
+
+// Creando el AppReducer
+const AppReducer = (state, action) => {
+  switch (action.type) {
+    default:
+      return state;
+  }
+};
 
 const initialState = {
   budget: 2000,
@@ -13,15 +22,28 @@ export const AppContext = createContext();
 // AppProvider
 export function AppProvider(props) {
   const [state, dispatch] = useReducer(AppReducer, initialState);
+  const { children } = props;
+  /*
+  const appState = useMemo(() => ({
+    budget: state.budget,
+    expenses: state.expenses,
+    dispatch,
+  }), [state.budget, state.expenses]);
+  */
+
   return (
     <AppContext.Provider
       value={{
         budget: state.budget,
         expenses: state.expenses,
-        dispatch
+        dispatch,
       }}
     >
-      {props.children}
+      {children}
     </AppContext.Provider>
   );
 }
+
+AppProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
