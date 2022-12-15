@@ -1,13 +1,12 @@
-import React from 'react';
+// Imporntado el Hook para el contexto
+import React, { useContext } from 'react';
 import ExpenseItem from './ExpenseItem';
+// Importando el contexto de la aplicación
+import { AppContext } from '../context/AppContext';
 
 function ExpenseList() {
-  // Datos ficticios
-  const expenses = [
-    { id: 10, name: 'Hipoteca', cost: 6500 },
-    { id: 11, name: 'Despensa', cost: 5000 },
-    { id: 12, name: 'Transporte', cost: 1000 },
-  ];
+  // Se extrae la lista del contexto global
+  const { expenses } = useContext(AppContext);
   return (
     <ul className="list-group">
       {expenses.map((expense) => (
