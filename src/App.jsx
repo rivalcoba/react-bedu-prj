@@ -11,7 +11,10 @@ function App() {
   return (
     <AppProvider>
       <div className="container">
-        <h1 className="mt-3">Mi Presupuesto</h1>
+        <h1 className="mt-3">
+          🪙
+          <span className="badge bg-secondary">Appresupuesto</span>
+        </h1>
         <div className="row mt-3">
           <div className="col-sm">
             <Budget />
